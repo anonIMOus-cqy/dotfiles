@@ -4,7 +4,7 @@ markup=pango
 
 border=#ffffff
 border_top=0
-border_bottom=1
+border_bottom=0
 border_left=0
 border_right=0
 
@@ -12,11 +12,15 @@ command=~/.config/i3blocks/scripts/$BLOCK_NAME
 interval=5
 
 [wifi]
-instance=wlp2s0
+instance=wlp3s0
 interval=1
 
+[bluetooth]
+label=
+interval=10
+
 [battery]
-interval=30
+interval=1
 
 [i3backlight]
 interval=once

@@ -1,18 +1,24 @@
 switch $USER
-case waigni
+case cqy
     function twl_get_Prompt
-        set_color white
-        echo -n 'w'
-        set_color BCBCBC
+        set_color 58B5F1
         echo -n 'a'
-        set_color 8A8A8A
-        echo -n 'i'
-        set_color 5FD7FF
-        echo -n 'g'
-        set_color 00D7FF
+        set_color 6BBDF3
         echo -n 'n'
-        set_color 00AFFF
-        echo -n 'i'
+        set_color 7EC5F4
+        echo -n 'o'
+        set_color 90CEF6
+        echo -n 'n'
+        set_color A2D6F7
+        echo -n 'I'
+        set_color B5DEF9
+        echo -n 'M'
+        set_color C7E6FA
+        echo -n 'O'
+        set_color DAEEFC
+        echo -n 'u'
+        set_color EDF7FD
+        echo -n 's'
     end
 case root
     function twl_get_Prompt

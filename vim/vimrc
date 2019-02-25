@@ -7,15 +7,14 @@ Helptags
 
 " }}}
 " Plugins {{{
-
 " Vim-Latex {{{
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 let g:Tex_SmartKeyQuote=0
 
-imap <c-\> <Plug>IMAP_JumpForward
-nmap <c-\> <Plug>IMAP_JumpForward
-vmap <c-\> <Plug>IMAP_JumpForward
+" imap <c-j> <Plug>IMAP_JumpForward
+" nmap <c-j> <Plug>IMAP_JumpForward
+" vmap <c-j> <Plug>IMAP_JumpForward
 nmap <localleader>l :redraw!<cr>
 " }}}
 " Airline {{{
@@ -49,7 +48,53 @@ let g:ale_linters = {
 \   'javascript': ['standard'],
 \}
 " }}}
+" YCM {{{
+let g:ycm_autoclose_preview_window_after_completition=0
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
 
+" }}}
+" AsyncRun {{{
+
+" Quick run via <F5>
+nnoremap <F5> :call <SID>compile_and_run()<CR>
+
+function! s:compile_and_run()
+    exec 'w'
+    if &filetype == 'c'
+        exec "AsyncRun! gcc % -o %<; time ./%<"
+    elseif &filetype == 'cpp'
+       exec "AsyncRun! g++ -std=c++11 % -o %<; time ./%<"
+    elseif &filetype == 'java'
+       exec "AsyncRun! javac %; time java %<"
+    elseif &filetype == 'sh'
+       exec "AsyncRun! time bash %"
+    elseif &filetype == 'python'
+       exec "AsyncRun! time python %"
+    endif
+endfunction
+
+" Deprecated:
+" augroup SPACEVIM_ASYNCRUN
+"     autocmd!
+"    " Automatically open the quickfix window
+"     autocmd User AsyncRunStart call asyncrun#quickfix_toggle(15, 1)
+" augroup END
+"
+" asyncrun now has an option for opening quickfix automatically
+let g:asyncrun_open = 15
+" }}}
+" Tabnine {{{
+set rtp+=~/.vim/bundle/tabnine-vim
+" }}}
 " }}}
 " General {{{
 
@@ -83,7 +128,7 @@ set nojoinspaces
 
 " }}}
 
-colorscheme luna-term
+colo allomancer
 
 syntax on
 filetype plugin indent on
@@ -291,7 +336,8 @@ nnoremap <leader>Z zMzvzz
 " }}}
 
 " Yank to clipboard
-vnoremap <c-c> "+y
+set clipboard=unnamed
+vnoremap <C-c> "+y
 
 " Cancer
 vnoremap K k
@@ -321,7 +367,7 @@ function! s:RunShellCommand(cmdline)
   1
 endfunction
 
-nnoremap <leader>s :Shell 
+nnoremap <leader>s :Shell
 
 " }}}
 
@@ -359,4 +405,9 @@ autocmd BufRead,BufNewFile ~/.calcurse/notes/* set filetype=markdown
 " nnoremap :q :exe "silent !~/.config/i3/lock.sh" \| q
 
 " }}}
-
+" Code {{{
+let python_highlight_all=1
+syntax on
+command R !./%
+nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
+" }}}

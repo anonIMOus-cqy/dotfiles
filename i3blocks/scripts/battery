@@ -7,27 +7,45 @@ STATUS=$(cat /sys/class/power_supply/${BATTERY}/status)
 TIME=$(acpi | cut -d ' ' -f 5 | sed -r 's/:[0-9]+$//')
 
 get_label() {
-    if [[ $CAPACITY -ge 50 ]]; then
-        echo -e '\ue238'
-    elif [[ $CAPACITY -ge 20 ]]; then
-        echo -e '\ue237'
+    if [[ $CAPACITY -ge 95 ]]; then
+        echo -e '\uf578'
+    elif [[ $CAPACITY -le 5 ]]; then
+        echo -e '\uf582'
     else
-        echo -e '\ue236'
+        echo -e '\u'$(printf '%x' $((16#f579 + $CAPACITY / 10 - 1)))
+    fi
+}
+
+get_charging_label() {
+    if [[ $CAPACITY -le 20 ]]; then
+        echo -e '\uf585'
+    elif [[ $CAPACITY -le 30 ]]; then
+        echo -e '\uf586'
+    elif [[ $CAPACITY -le 40 ]]; then
+        echo -e '\uf587'
+    elif [[ $CAPACITY -le 60 ]]; then
+        echo -e '\uf588'
+    elif [[ $CAPACITY -le 80 ]]; then
+        echo -e '\uf589'
+    elif [[ $CAPACITY -le 90 ]]; then
+        echo -e '\uf58a'
+    else
+        echo -e '\uf584'
     fi
 }
 
 get_status() {
     case ${STATUS} in
         Discharging)    get_label ;;
-        Charging)       echo -e '\ue239' ;;
-        Full)           echo -e '\ue23a' ;;
+        Charging)       get_charging_label ;;
+        Full)           echo -e '\uf583' ;;
     esac
 }
 
 [[ $CAPACITY -ge 98  ]] && [[ "$STATUS" = 'Charging' ]] &&
     STATUS='Full'
 
-echo "<span font='9'>$(get_status)</span>  $CAPACITY% $TIME"
-echo "<span font='9'>$(get_status)</span>  $CAPACITY%"
+echo "<span font='12'>$(get_status)</span>  $CAPACITY% $TIME"
+echo "<span font='12'>$(get_status)</span>  $CAPACITY%"
 [[ "$STATUS" = 'Full' ]] &&
     echo '#00ff00' || exit 0

@@ -4,54 +4,84 @@
 
 *background: #000000
 *foreground: #dcdccc
+*.foreground: #abb2bf
+*.background: #282c34
+
+*.color0:     #282c34
+*.color8:     #55606d
+
+*.color1:     #e06c75
+*.color9:     #af5f5f
+
+*.color2:     #87AF87
+*.color10:    #87AF87
+
+*.color3:     #D7AFAF
+*.color11:    #FF875F
+
+*.color4:     #6E88A6
+*.color12:    #6E88A6
+
+*.color5:     #D18EC2
+*.color13:    #875faf
+
+*.color6:     #5fafaf
+*.color14:    #5fafaf
+
+*.color7:     #ABB2BF
+*.color15:    #ECEFF4
 
 ! ------------------------------------------------------------------------------
 ! xterm
 ! ------------------------------------------------------------------------------
-xterm*termName: xterm-256color
-xterm*locale: true
-xterm*saveLines: 4096
-xterm*bellIsUrgent: true
+xterm*termName:             xterm-256color
+xterm*locale:               true
+xterm*saveLines:            4096
+xterm*bellIsUrgent:         true
 
-xterm*faceName: Iosevka Term:style=Regular:size=14:antialias=true
+xterm*faceName:             Iosevka Term:style=Regular:size=14:antialias=true
 
-xterm*borderWidth: 0
-xterm*scrollBar: false
-xterm*selectToClipboard: true
+xterm*borderWidth:          0
+xterm*scrollBar:            false
+xterm*selectToClipboard:    true
 
 ! ------------------------------------------------------------------------------
 ! urxvt
 ! ------------------------------------------------------------------------------
-URxvt*font: xft:Iosevka Term:style=Regular:size=11:antialias=true,\
-            -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1,\
-            xft:DejaVu Sans Mono:style=Book:size=11,\
+URxvt.depth:                32
+URxvt.background:           rgba:3400/3500/5200/9999
+URxvt*font:                 xft:Iosevka Term:style=Regular:size=16:antialias=true,\
+                            -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1,\
+                            xft:DejaVu Sans Mono:style=Book:size=14,\
 
 !URxvt*letterSpace: 0
 
-URxvt*saveLines: 4096
-URxvt*bellIsUrgent: true
-URxvt*unicode3: true
+URxvt*saveLines:            4096
+URxvt*bellIsUrgent:         true
+URxvt*unicode3:             true
 
-URxvt*borderWidth: 0
-URxvt*internalBorder: 4
-URxvt*scrollBar: false
-URxvt*scrollBar_right: false
-URxvt*scrollBar_floating: false
-URxvt*scrollstyle: rxvt
-URxvt*scrollTtyOutput: false
-URxvt*scrollWithBuffer: true
-URxvt*scrollTtyKeypress: true
+URxvt*borderWidth:          0
+URxvt*internalBorder:       4
+URxvt*scrollBar:            false
+URxvt*scrollBar_right:      false
+URxvt*scrollBar_floating:   false
+URxvt*scrollstyle:          rxvt
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     true
+URxvt*scrollTtyKeypress:    true
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-URxvt.iso14755: False
-URxvt*color4: rgb:41/69/e1
-URxvt*color12: rgb:54/54/ff
+URxvt.iso14755:             False
+URxvt*color4:               rgb:41/69/e1
+URxvt*color12:              rgb:54/54/ff
 URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,selection-to-clipboard,font-size
 URxvt.url-select.launcher:  qutebrowser
 URxvt.url-select.underline: true
 URxvt.keysym.M-u:           perl:url-select:select_next
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:searc
+
+URxvt.foreground:           #eeeeee
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme

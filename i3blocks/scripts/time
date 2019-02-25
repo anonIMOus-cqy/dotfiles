@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -ne "<span font='11'>\ue151</span>  "
+echo -ne "<span font='12'>\uf64f</span>  "
 case ${BLOCK_BUTTON} in
     1) date '+%A %B %d %Y %H:%M:%S' ;;
     *) date '+%b %d %H:%M' ;;

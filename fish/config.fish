@@ -8,6 +8,8 @@ if status --is-login
     end
 end
 
+tput smkx
+
 test -s "$HOME/.config/fish/shortcuts.fish"
 and source "$HOME/.config/fish/shortcuts.fish"
 
