@@ -5,6 +5,9 @@ set sts=2
 set listchars+=space:␣
 set noexpandtab
 
+" Enable `Alt` key macros
+let g:Tex_AdvancedMath = 1
+
 function! UpdatePDF()
     silent! execute "silent! Start! latexmk -f -silent %"
 endfunction
@@ -14,7 +17,7 @@ function! StartLatexmk()
     "     echo "latexmk is already running"
     " else
     "     let b:latexmkStarted = 1
-        Start! st -e latexmk -f -silent -pvc %
+        Start! urxvt -e latexmk -f -silent -pvc %
         echo "latexmk is now running"
     " endif
 endfunction

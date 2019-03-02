@@ -11,10 +11,6 @@ Helptags
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 let g:Tex_SmartKeyQuote=0
-
-" imap <c-j> <Plug>IMAP_JumpForward
-" nmap <c-j> <Plug>IMAP_JumpForward
-" vmap <c-j> <Plug>IMAP_JumpForward
 nmap <localleader>l :redraw!<cr>
 " }}}
 " Airline {{{
@@ -196,7 +192,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set wrap
-set textwidth=90
+set textwidth=79
 set colorcolumn=+1
 set formatoptions=qrn1
 

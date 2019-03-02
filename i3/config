@@ -240,7 +240,7 @@ bindsym $mod+Shift+s    exec $spotify
 # bindsym $mod+n          [instance="utils/notes$"]  scratchpad show
 bindsym $mod+i          $exec $term -n "utils/top" -e htop
 bindsym $mod+Shift+c    $exec $term -n "utils/R" -e R -q --no-save --no-restore
-bindsym $mod+n          $exec $term -n "utils/notes" -e vim $HOME/.notes.txt
+bindsym $mod+n          $exec $term -n "utils/notes" -e nvim $HOME/.notes.txt
 
 for_window [instance="utils/"] floating enable
 for_window [instance="scratchpad/"] move scratchpad

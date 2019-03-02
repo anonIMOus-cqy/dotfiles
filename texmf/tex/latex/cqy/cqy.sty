@@ -97,6 +97,9 @@
 %For use in author command
 \newcommand{\plusemail}[1]{\\ \normalfont \texttt{\mailto{#1}}}
 
+%Re-order numbering layers in `enumerate` enviroment
+\renewcommand{\labelenumi}{(\alph{enumi})}
+
 %More commands and math operators
 \DeclareMathOperator{\cis}{cis}
 \DeclareMathOperator*{\lcm}{lcm}
@@ -250,12 +253,12 @@
 
 \ifcqysetup
 	%%fakesection Set up author and date
-	\ifcqyauthor
-		\AtBeginDocument{%
-			\author{}
-			\date{\today}
-		}
-	\fi
+	%\ifcqyauthor
+	%	\AtBeginDocument{%
+	%		\author{Qinyu Cui}
+	%		\date{\today}
+	%	}
+	%\fi
 	%%fakesection Hyperref
 	\ifcqypkg
 		\PassOptionsToPackage{usenames,svgnames,dvipsnames}{xcolor}
@@ -267,19 +270,27 @@
 		\usepackage[nameinlink]{cleveref}
 	\fi
 
-	%%fakesection New Theorem Styles -- mdbluebox, mdrecbox, mdinlinebox
+	%%fakesection New Theorem Styles -- mdbluebox, mdredbox, mdgreenbox, mdblackbox, mdinlinebox
 	\ifcqymdthm
 		\usepackage{thmtools}
 		\usepackage[framemethod=TikZ]{mdframed}
 
 		\mdfdefinestyle{mdbluebox}{%
-			roundcorner = 10pt,
-			linewidth=1pt,
-			skipabove=12pt,
-			innerbottommargin=9pt,
-			skipbelow=2pt,
-			linecolor=blue,
-			nobreak=true,
+			%roundcorner=10pt,
+			%linewidth=1pt,
+			%skipabove=12pt,
+			%innerbottommargin=9pt,
+			%skipbelow=2pt,
+			%linecolor=blue,
+			%nobreak=true,
+			%backgroundcolor=TealBlue!5,
+			skipabove=8pt,
+			linewidth=2pt,
+			rightline=false,
+			leftline=true,
+			topline=false,
+			bottomline=false,
+			linecolor=MidnightBlue,
 			backgroundcolor=TealBlue!5,
 		}
 		\declaretheoremstyle[
@@ -289,24 +300,68 @@
 			postheadspace={0pt}
 		]{thmbluebox}
 
-		\mdfdefinestyle{mdrecbox}{%
-			linewidth=0.5pt,
-			skipabove=12pt,
-			frametitleaboveskip=5pt,
-			frametitlebelowskip=0pt,
-			skipbelow=2pt,
-			frametitlefont=\bfseries,
-			innertopmargin=4pt,
-			innerbottommargin=8pt,
-			nobreak=true,
-			backgroundcolor=Salmon!5,
+		\mdfdefinestyle{mdredbox}{%
+			%roundcorner=10pt,
+			%linewidth=1pt,
+			%skipabove=12pt,
+			%frametitleaboveskip=5pt,
+			%frametitlebelowskip=0pt,
+			%skipbelow=2pt,
+			%frametitlefont=\bfseries,
+			%innertopmargin=4pt,
+			%innerbottommargin=8pt,
+			%nobreak=true,
+			%backgroundcolor=RedViolet!5,
+			%linecolor=RedViolet,
+			skipabove=8pt,
+			linewidth=2pt,
+			rightline=false,
+			leftline=true,
+			topline=false,
+			bottomline=false,
+			linecolor=RedViolet,
+			backgroundcolor=Thistle!10,
 		}
 		\declaretheoremstyle[
-			headfont=\bfseries\color{RawSienna},
-			mdframed={style=mdrecbox},
+			headfont=\bfseries\color{RedViolet!75!Black},
+			mdframed={style=mdredbox},
 			headpunct={\\[3pt]},
 			postheadspace={0pt},
-		]{thmrecbox}
+		]{thmredbox}
+
+		\mdfdefinestyle{mdgreenbox}{%
+			linewidth=2pt,
+			skipabove=8pt,
+			rightline=false,
+			leftline=true,
+			topline=false,
+			bottomline=false,
+			linecolor=ForestGreen,
+			backgroundcolor=ForestGreen!5,
+		}
+		\declaretheoremstyle[
+			headfont=\sffamily\bfseries\color{ForestGreen!70!Black},
+			spaceabove=0pt,
+			spacebelow=0pt,
+			mdframed={style=mdgreenbox},
+		]{thmgreenbox}
+
+		\mdfdefinestyle{mdblackbox}{%
+			skipabove=8pt,
+			linewidth=2pt,
+			rightline=false,
+			leftline=true,
+			topline=false,
+			bottomline=false,
+			linecolor=black,
+			backgroundcolor=gray!10,
+		}
+		\declaretheoremstyle[
+			headfont=\bfseries,
+			spaceabove=0pt,
+			spacebelow=0pt,
+			mdframed={style=mdblackbox}
+		]{thmblackbox}
 
 		\mdfdefinestyle{mdinlinebox}{%
 			skipabove=8pt,
@@ -344,10 +399,16 @@
 			\declaretheorem[style=thmbluebox,name=Lemma,sibling=theorem]{lemma}
 			\declaretheorem[style=thmbluebox,name=Proposition,sibling=theorem]{proposition}
 			\declaretheorem[style=thmbluebox,name=Corollary,sibling=theorem]{corollary}
+			\declaretheorem[style=thmbluebox,name=Conjecture,sibling=theorem]{conjecture}
+			\declaretheorem[style=thmbluebox,name=Criterion,sibling=theorem]{criterion}
+			\declaretheorem[style=thmbluebox,name=Assertion,sibling=theorem]{assertion}
 			\declaretheorem[style=thmbluebox,name=Theorem,numbered=no]{theorem*}
 			\declaretheorem[style=thmbluebox,name=Lemma,numbered=no]{lemma*}
 			\declaretheorem[style=thmbluebox,name=Proposition,numbered=no]{proposition*}
 			\declaretheorem[style=thmbluebox,name=Corollary,numbered=no]{corollary*}
+			\declaretheorem[style=thmbluebox,name=Conjecture,numbered=no]{conjecture*}
+			\declaretheorem[style=thmbluebox,name=Criterion,numbered=no]{criterion*}
+			\declaretheorem[style=thmbluebox,name=Assertion,numbered=no]{assertion*}
 		\else
 			\ifcqysecthm
 				\newtheorem{theorem}{Theorem}[section]
@@ -357,10 +418,16 @@
 			\newtheorem{lemma}[theorem]{Lemma}
 			\newtheorem{proposition}[theorem]{Proposition}
 			\newtheorem{corollary}[theorem]{Corollary}
+			\newtheorem{conjecture}[theorem]{Conjecture}
+			\newtheorem{criterion}[theorem]{Criterion}
+			\newtheorem{assertion}[theorem]{Assertion}
 			\newtheorem*{theorem*}{Theorem}
 			\newtheorem*{lemma*}{Lemma}
 			\newtheorem*{proposition*}{Proposition}
 			\newtheorem*{corollary*}{Corollary}
+			\newtheorem*{conjecture*}{Conjecture}
+			\newtheorem*{criterion*}{Criterion}
+			\newtheorem*{assertion*}{Assertion}
 		\fi
 
 		%Def-style theorems
@@ -374,46 +441,101 @@
 			\newtheorem*{algorithm*}{Algorithm}
 		\fi
 
-		\newtheorem{claim}[theorem]{Claim}
-		\newtheorem{conjecture}[theorem]{Conjecture}
-		\newtheorem{definition}[theorem]{Definition}
-		\newtheorem{fact}[theorem]{Fact}
-
-		\newtheorem{answer}[theorem]{Answer}
-		\newtheorem{case}[theorem]{Case}
-		\newtheorem{ques}[theorem]{Question}
-		\newtheorem{exercise}[theorem]{Exercise}
-		\newtheorem{problem}[theorem]{Problem}
-
-		\newtheorem*{answer*}{Answer}
-		\newtheorem*{case*}{Case}
-		\newtheorem*{claim*}{Claim}
-		\newtheorem*{conjecture*}{Conjecture}
-		\newtheorem*{definition*}{Definition}
-		\newtheorem*{fact*}{Fact}
-		\newtheorem*{joke*}{Joke}
-		\newtheorem*{ques*}{Question}
-		\newtheorem*{exercise*}{Exercise}
-		\newtheorem*{problem*}{Problem}
+		\ifcqymdthm
+			\declaretheorem[style=thmblackbox,name=Definition,sibling=theorem]{definition}
+			\declaretheorem[style=thmblackbox,name=Question,sibling=theorem]{question}
+			\declaretheorem[style=thmblackbox,name=Exercise,sibling=theorem]{exercise}
+			\declaretheorem[style=thmblackbox,name=Condition,sibling=theorem]{condition}
+			\declaretheorem[style=thmblackbox,name=Problem,sibling=theorem]{problem}
+			\declaretheorem[style=thmblackbox,name=Axiom,sibling=theorem]{axiom}
+			\declaretheorem[style=thmblackbox,name=Property,sibling=theorem]{property}
+			\declaretheorem[style=thmblackbox,name=Assumption,sibling=theorem]{assumption}
+			\declaretheorem[style=thmblackbox,name=Hypothesis,sibling=theorem]{hypothesis}
+			\declaretheorem[style=thmblackbox,name=Definition,numbered=no]{definition*}
+			\declaretheorem[style=thmblackbox,name=Question,numbered=no]{question*}
+			\declaretheorem[style=thmblackbox,name=Exercise,numbered=no]{exercise*}
+			\declaretheorem[style=thmblackbox,name=Condition,numbered=no]{condition*}
+			\declaretheorem[style=thmblackbox,name=Problem,numbered=no]{problem*}
+			\declaretheorem[style=thmblackbox,name=Axiom,numbered=no]{axiom*}
+			\declaretheorem[style=thmblackbox,name=Property,numbered=no]{property*}
+			\declaretheorem[style=thmblackbox,name=Assumption,numbered=no]{assumption*}
+			\declaretheorem[style=thmblackbox,name=Hypothesis,numbered=no]{hypothesis*}
+		\else
+			\newtheorem{definition}[theorem]{Definition}
+			\newtheorem{problem}[theorem]{Problem}
+			\newtheorem{exercise}[theorem]{Exercise}
+			\newtheorem{question}[theorem]{Question}
+			\newtheorem{answer}[theorem]{Answer}
+			\newtheorem{axiom}[theorem]{Axiom}
+			\newtheorem{fact}[theorem]{Fact}
+			\newtheorem{property}[theorem]{Property}
+			\newtheorem{condition}[theorem]{Condition}
+			\newtheorem{assumption}[theorem]{Assumption}
+			\newtheorem{hypothesis}[theorem]{Hypothesis}
+			\newtheorem*{definition*}{Definition}
+			\newtheorem*{problem*}{Problem}
+			\newtheorem*{exercise*}{Exercise}
+			\newtheorem*{question*}{Question}
+			\newtheorem*{answer*}{Answer}
+			\newtheorem*{axiom*}{Axiom}
+			\newtheorem*{fact*}{Fact}
+			\newtheorem*{property*}{Property}
+			\newtheorem*{condition*}{Condition}
+			\newtheorem*{assumption*}{Assumption}
+			\newtheorem*{hypothesis*}{Hypothesis}
+			\newtheorem*{joke*}{Joke}
+		\fi
 
 
 		\ifcqymdthm
-			\declaretheorem[style=thmrecbox,name=Example,sibling=theorem]{example}
-			\declaretheorem[style=thmrecbox,name=Example,numbered=no]{example*}
+			\declaretheorem[style=thmredbox,name=Example,sibling=theorem]{example}
+			\declaretheorem[style=thmredbox,name=Example,numbered=no]{example*}
 		\else
 			\newtheorem{example}[theorem]{Example}
 			\newtheorem*{example*}{Example}
 		\fi
 
 		% Remark-style theorems
-		%\theoremstyle{remark}
-		\newtheorem{note}[theorem]{Note}
-		\newtheorem{remark}[theorem]{Remark}
-		\newtheorem*{note*}{Note}
-		\newtheorem*{remark*}{Remark}
-		\newtheorem{abuse}[theorem]{Abuse of Notation}
-		\newtheorem*{abuse*}{Abuse of Notation}
-	\fi
+		\theoremstyle{remark}
+		\ifcqymdthm
+			\declaretheorem[style=thmgreenbox,name=Remark,sibling=theorem]{remark}
+			\declaretheorem[style=thmgreenbox,name=Note,sibling=theorem]{note}
+			\declaretheorem[style=thmgreenbox,name=Notation,sibling=theorem]{notation}
+			\declaretheorem[style=thmgreenbox,name=Claim,sibling=theorem]{claim}
+			\declaretheorem[style=thmgreenbox,name=Summary,sibling=theorem]{summary}
+			\declaretheorem[style=thmgreenbox,name=Acknowledgment,sibling=theorem]{acknowledgment}
+			\declaretheorem[style=thmgreenbox,name=Case,sibling=theorem]{case}
+			\declaretheorem[style=thmgreenbox,name=Conclusion,sibling=theorem]{conclusion}
+			\declaretheorem[style=thmgreenbox,name=Abuse of Notation,sibling=theorem]{abuse}
+			\declaretheorem[style=thmgreenbox,name=Remark,numbered=no]{remark*}
+			\declaretheorem[style=thmgreenbox,name=Note,numbered=no]{note*}
+			\declaretheorem[style=thmgreenbox,name=Notation,numbered=no]{notation*}
+			\declaretheorem[style=thmgreenbox,name=Claim,numbered=no]{claim*}
+			\declaretheorem[style=thmgreenbox,name=Summary,numbered=no]{summary*}
+			\declaretheorem[style=thmgreenbox,name=Acknowledgment,numbered=no]{acknowledgment*}
+			\declaretheorem[style=thmgreenbox,name=Case,numbered=no]{case*}
+			\declaretheorem[style=thmgreenbox,name=Conclusion,numbered=no]{conclusion*}
+			\declaretheorem[style=thmgreenbox,name=Abuse of Notation,numbered=no]{abuse*}
+		\else
+			\newtheorem{remark}[theorem]{Remark}
+			\newtheorem{note}[theorem]{Note}
+			\newtheorem{notation}[theorem]{Notation}
+			\newtheorem{claim}[theorem]{Claim}
+			\newtheorem{summary}[theorem]{Summary}
+			\newtheorem{acknowledgment}[theorem]{Acknowledgment}
+			\newtheorem{case}[theorem]{Case}
+			\newtheorem{conclusion}[theorem]{Conclusion}
+			\newtheorem{abuse}[theorem]{Abuse of Notation}
+			\newtheorem*{remark*}{Remark}
+			\newtheorem*{note*}{Note}
+			\newtheorem*{notation*}{Notation}
+			\newtheorem*{claim*}{Claim}
+			\newtheorem*{summary*}{Summary}
+			\newtheorem*{acknowledgment*}{Acknowledgment}
+			\newtheorem*{case*}{Case}
+			\newtheorem*{conclusion*}{Conclusion}
+			\newtheorem*{abuse*}{Abuse of Notation}
+		\fi
 
 	%%fakesection Fancy section and chapter heads
 	\ifcqycolorsec
