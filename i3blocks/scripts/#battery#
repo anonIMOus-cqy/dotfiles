@@ -39,14 +39,11 @@ get_status() {
         Discharging)    get_label ;;
         Charging)       get_charging_label ;;
         Full)           echo -e '\uf583' ;;
-        *)              echo "$STATUS" ;; 
+        *) 
     esac
 }
 
 [[ $CAPACITY -ge 98  ]] && [[ "$STATUS" = 'Charging' ]] &&
-    STATUS='Full'
-
-[[ "$STATUS" = 'Not charging' ]] &&
     STATUS='Full'
 
 echo "<span font='12'>$(get_status)</span>  $CAPACITY% $TIME"
