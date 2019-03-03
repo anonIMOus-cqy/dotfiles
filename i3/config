@@ -365,13 +365,13 @@ for_window [class="Nm-connection-editor"] floating enable
 # == STARTUP ==
 # exec_always --no-startup-id ~/.config/polybar/launch.sh
 # $exec aw-qt
-$exec setsid -f rescuetime
+$exec rescuetime
 $exec CM_SELECTIONS=clipboard clipmenud
 $exec dunst
-$exec redshift-gtk
+$exec redshift-qt
 $exec emacs --daemon
 $exec fcitx
-$exec setsid -f megasync
+$exec megasync
 # $exec nm-applet
 $exec compton -b 
 # $exec conky -d
