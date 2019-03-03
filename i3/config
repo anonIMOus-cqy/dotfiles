@@ -107,14 +107,14 @@ bindsym $mod+d focus child
 # set workspace vars
 set $WS1 "1: "
 set $WS2 "2: "
-set $WS3 "3: "
+set $WS3 "3: "
 set $WS4 "4: "
-set $WS5 5
-set $WS6 6
-set $WS7 7
-set $WS8 8
-set $WS9 9
-set $WS0 "10: "
+set $WS5 "5: "
+set $WS6 "6: "
+set $WS7 "7: "
+set $WS8 "8: "
+set $WS9 "9: "
+set $WS0 "10: "
 
 # switch to workspace
 bindsym $mod+1 workspace $WS1
@@ -252,8 +252,8 @@ for_window [instance="sticky/"] sticky enable
 # bad idea.. super slow
 
 # load video/music in clipboard
-bindsym $mod+m          workspace $WS3, layout tabbed, exec $term -e mpv "$clip"
-bindsym $mod+Shift+m    workspace $WS3, exec $term -e mpv --no-video --shuffle "$clip"
+bindsym $mod+m          workspace $WS7, layout tabbed, exec $term -e mpv "$clip"
+bindsym $mod+Shift+m    workspace $WS7, exec $term -e mpv --no-video --shuffle "$clip"
 
 # gap size
 bindsym $mod+minus          gaps inner current minus    2
@@ -344,7 +344,6 @@ for_window [class="Nm-connection-editor"] floating enable
     assign [class="Firefox"]            $WS2
 # WS3
     assign [class="bomi"]               $WS3
-    assign [class="mpv"]                $WS3
 # WS4
     assign [class="Zathura"]            $WS4
 # WS5
@@ -354,6 +353,7 @@ for_window [class="Nm-connection-editor"] floating enable
     #assign [class="Lutris"]            $WS6
     #assign [class="Steam"]             $WS6
 # WS7
+    assign [class="mpv"]                $WS7
 # WS8
     assign [class="Discord"]            $WS8
 # WS9
