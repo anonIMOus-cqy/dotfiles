@@ -331,9 +331,10 @@ nnoremap <leader>Z zMzvzz
 
 " }}}
 
-" Yank to clipboard
+" Yank and paste to clipboard
 set clipboard=unnamed
 vnoremap <C-c> "+y
+vnoremap <C-p> "+p
 
 " Cancer
 vnoremap K k
