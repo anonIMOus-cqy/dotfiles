@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: template for a new lecture
+# key: newlec
+# --
+\clearpage
+\section{`(twl//insert-date)`}
+${1:
+\subsection{$2}
+}
+$0

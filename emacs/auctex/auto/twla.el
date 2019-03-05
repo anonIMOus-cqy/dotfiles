@@ -17,6 +17,7 @@
     "geometry"
     "xcolor"
     "siunitx"
+    "graphicx"
     "framed"
     "mdframed"
     "ntheorem"
@@ -58,20 +59,24 @@
     "nul"
     "rank"
     "problem"
-    "subproblem")
+    "subproblem"
+    "subsubproblem")
    (LaTeX-add-environments
     "proof"
     "solution"
     "subproof")
    (LaTeX-add-counters
     "probl"
-    "probll")
+    "probll"
+    "problll")
    (LaTeX-section-list-add-locally
      '(("problem" 2)
-       ("subproblem" 3)))
+       ("subproblem" 3)
+       ("subsubproblem" 4)))
    (if (fboundp 'reftex-add-section-levels)
      (reftex-add-section-levels
        '(("problem" . 2)
-         ("subproblem" . 3)))))
+         ("subproblem" . 3)
+         ("subsubproblem" . 4)))))
  :latex)
 

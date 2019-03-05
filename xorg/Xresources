@@ -2,8 +2,6 @@
 ! defaults
 ! ------------------------------------------------------------------------------
 
-*background: #000000
-*foreground: #dcdccc
 *.foreground: #abb2bf
 *.background: #282c34
 
@@ -51,7 +49,6 @@ xterm*selectToClipboard:    true
 URxvt.depth:                32
 URxvt.background:           rgba:3400/3500/5200/9999
 URxvt*font:                 xft:Iosevka Term:style=Regular:size=16:antialias=true,\
-                            -wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1,\
                             xft:DejaVu Sans Mono:style=Book:size=14,\
 
 !URxvt*letterSpace: 0
@@ -74,7 +71,7 @@ URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755:             False
 URxvt*color4:               rgb:41/69/e1
 URxvt*color12:              rgb:54/54/ff
-URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,selection-to-clipboard,font-size
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,selection-to-clipboard,font-size,resize-font
 URxvt.url-select.launcher:  qutebrowser
 URxvt.url-select.underline: true
 URxvt.keysym.M-u:           perl:url-select:select_next
