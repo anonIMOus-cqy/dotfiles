@@ -96,6 +96,8 @@
     ~/.config/zathura/zathurarc:            others/zathurarc
     # latexmk
     ~/.latexmkrc:                           others/latexmkrc
+    # tmux
+    ~/.tmux.conf:                           others/tmux.conf
     # redshift
     ~/.config/redshift.conf:                others/redshift.conf
     # neofetch
