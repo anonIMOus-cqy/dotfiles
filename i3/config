@@ -220,7 +220,7 @@ gaps inner 0
 smart_borders on
 
 # background image
-exec_always --no-startup-id feh --bg-scale ~/Pictures/moon.jpg
+exec_always --no-startup-id feh --bg-scale ~/dotfiles/i3/bg.jpg
 
 # apps
 # mode "$apps" {
