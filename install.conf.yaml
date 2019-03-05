@@ -38,11 +38,13 @@
     # Editors
     # ===
 
-    # vim
+    # Vim
     ~/.vim:                                 vim/vim
     ~/.vimrc:                               vim/vimrc
     ~/.gvimrc:                              vim/gvimrc
-    # emacs
+    # NeoVim
+    ~/.config/nvim:                         nvim
+    # Emacs
     ~/.emacs.d:                             emacs
     # ~/.emacs.d/init.el:                     emacs/init.el
     # ~/.emacs.d/config.org:                  emacs/config.org
