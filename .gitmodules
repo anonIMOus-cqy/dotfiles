@@ -13,9 +13,6 @@
 [submodule "vim/vim/bundle/nerdtree"]
 	path = vim/vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
-[submodule "vim/vim/bundle/tabnine-vim"]
-    path = vim/vim/bundle/tabnine-vim
-    url = https://github.com/zxqfl/TabNine
 [submodule "vim/vim/bundle/vim-airline"]
 	path = vim/vim/bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
