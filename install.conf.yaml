@@ -10,6 +10,7 @@
 
 - link:
     ~/.dotfiles: ''
+    ~/bin:
     # Shortcuts
     ~/.config/Shortcuts:
 
@@ -97,8 +98,8 @@
     ~/.config/redshift.conf:                others/redshift.conf
     # neofetch
     ~/.config/neofetch/config:              others/neofetch.conf
-    # # termite
-    # ~/.config/termite/config:               others/termite.conf
+    # compton
+    ~/.config/compton.conf:                 others/compton.conf
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

@@ -216,7 +216,7 @@ bar {
 # i3-gaps
 for_window [class="^.*"] border pixel 2
 gaps outer 0
-gaps inner 8
+gaps inner 0
 smart_borders on
 
 # background image
@@ -262,10 +262,10 @@ bindsym $mod+plus           gaps inner current set      8
 bindsym $mod+Shift+plus     gaps inner current plus     2
 
 # Resize
-bindsym $mod+Shift+u    resize shrink   width   10 px or 10 ppt
-bindsym $mod+Shift+i    resize shrink   height  10 px or 10 ppt
-bindsym $mod+Shift+o    resize grow     height  10 px or 10 ppt
-bindsym $mod+Shift+p    resize grow     width   10 px or 10 ppt
+bindsym $mod+Shift+u    resize shrink   width   5 px or 5 ppt
+bindsym $mod+Shift+i    resize shrink   height  5 px or 5 ppt
+bindsym $mod+Shift+o    resize grow     height  5 px or 5 ppt
+bindsym $mod+Shift+p    resize grow     width   5 px or 5 ppt
 
 # brightness
 bindsym XF86MonBrightnessDown       $exec ~/.config/i3/backlight.sh slow down  10
