@@ -15,10 +15,6 @@ interval=5
 instance=wlp3s0
 interval=1
 
-[bluetooth]
-label=
-interval=10
-
 [battery]
 interval=1
 
