@@ -10,4 +10,4 @@ MAXBRIGHTNESS=$(cat /sys/class/backlight/*/max_brightness)
 
 PERCENT=$(((BRIGHTNESS * 100 / MAXBRIGHTNESS + 3) / 5 * 5))
 
-echo -e "<span font='12'>\uf835</span>  $PERCENT%"
+echo -e "<span font='9'>\uf835</span>  $PERCENT%"

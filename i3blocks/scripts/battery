@@ -49,7 +49,7 @@ get_status() {
 [[ "$STATUS" = 'Not charging' ]] &&
     STATUS='Full'
 
-echo "<span font='12'>$(get_status)</span>  $CAPACITY% $TIME"
-echo "<span font='12'>$(get_status)</span>  $CAPACITY%"
+echo "<span font='9'>$(get_status)</span>  $CAPACITY% $TIME"
+echo "<span font='9'>$(get_status)</span>  $CAPACITY%"
 [[ "$STATUS" = 'Full' ]] &&
     echo '#00ff00' || exit 0

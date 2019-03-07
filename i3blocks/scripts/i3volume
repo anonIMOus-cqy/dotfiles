@@ -25,4 +25,4 @@ get_label() {
 
 VOLUME=$(pamixer --get-volume)
 
-echo "<span font='12'>$(get_label)</span>  $VOLUME%"
+echo "<span font='9'>$(get_label)</span>  $VOLUME%"

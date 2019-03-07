@@ -42,4 +42,4 @@ SPEED=$({ get_rx_bytes; sleep 1; get_rx_bytes; } | paste -sd ' ' | awk '{ print 
 
 QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
 
-echo -e "<span font='12'>\ufaa8</span>  $SPEED $QUALITY%"
+echo -e "<span font='9'>\ufaa8</span>  $SPEED $QUALITY%"

@@ -2,6 +2,14 @@
 ! defaults
 ! ------------------------------------------------------------------------------
 
+Xft.dpi:        144
+Xft.autohint:   0
+Xft.lcfilter:   lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting:    1
+Xft.antialias:  1
+Xft.rgba:       rgb
+
 *.foreground: #abb2bf
 *.background: #282c34
 
@@ -48,7 +56,7 @@ xterm*selectToClipboard:    true
 ! ------------------------------------------------------------------------------
 URxvt.depth:                32
 URxvt.background:           rgba:3400/3500/5200/9999
-URxvt*font:                 xft:Iosevka Term:style=Regular:size=16:antialias=true,\
+URxvt*font:                 xft:Iosevka Term:style=Regular:size=11:antialias=true,\
                             xft:DejaVu Sans Mono:style=Book:size=14,\
 
 !URxvt*letterSpace: 0
@@ -72,7 +80,9 @@ URxvt.iso14755:             False
 URxvt*color4:               rgb:41/69/e1
 URxvt*color12:              rgb:54/54/ff
 URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select,selection-to-clipboard,font-size,resize-font
-URxvt.url-select.launcher:  qutebrowser
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.url-select.launcher:  firefox
 URxvt.url-select.underline: true
 URxvt.keysym.M-u:           perl:url-select:select_next
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
