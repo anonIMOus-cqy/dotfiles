@@ -1526,7 +1526,7 @@ c.window.title_format = '{perc}{title}{title_sep}qutebrowser'
 
 # Default zoom level.
 # Type: Perc
-# c.zoom.default = '100%'
+c.zoom.default = '150%'
 
 # Available zoom levels.
 # Type: List of Perc
@@ -1559,9 +1559,10 @@ c.zoom.levels = [
 
 # Custom bindings
 # MPV
-config.bind(',m', 'spawn umpv {url}')
-config.bind(';M', 'hint --rapid links spawn umpv {hint-url}')
-config.bind(';m', 'hint links spawn umpv {hint-url}')
+config.bind(',m', 'spawn mpv {url}')
+config.bind(',M', 'spawn mpv --no-video --shuffle {url}')
+config.bind(';M', 'hint --rapid links spawn mpv {hint-url}')
+config.bind(';m', 'hint links spawn mpv {hint-url}')
 
 # Bindings for normal mode
 config.bind("'", 'enter-mode jump_mark')
