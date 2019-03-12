@@ -22,8 +22,8 @@ export PS1="$(_get_PS1)${RANGER_LEVEL:+[ranger] }${SSH_TTY:+(ssh) }"
 
 # == EXPORT ==
 #export PS1="[\u@\h \W]\$ ${RANGER_LEVEL:+[ranger] }${SSH_TTY:+(ssh) }"
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 export TERMINAL=urxvt
 export BROWSER=firefox
 export MAN_DISABLE_SECCOMP=1
@@ -61,6 +61,7 @@ alias g++14="g++ -std=c++14 -Wall"
 
 # VIM
 alias v="vim"
+alias n="nvim"
 
 # Ranger
 alias ra="ranger"
