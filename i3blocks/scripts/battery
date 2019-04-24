@@ -39,7 +39,7 @@ get_status() {
         Discharging)    get_label ;;
         Charging)       get_charging_label ;;
         Full)           echo -e '\uf583' ;;
-        *)              echo "$STATUS" ;; 
+        *)              echo "$STATUS" ;;
     esac
 }
 

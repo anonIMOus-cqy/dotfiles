@@ -15,7 +15,7 @@ set $mod Mod4
 set $exec exec --no-startup-id
 
 set $term urxvt
-set $browser firefox
+set $browser qutebrowser
 
 set $clip $(xclip -selection c -o)
 
@@ -103,6 +103,9 @@ bindsym $mod+a focus parent
 
 # focus the child container
 bindsym $mod+d focus child
+
+# jump to urgent window
+bindsym $mod+x [urgent=latest] focus
 
 # set workspace vars
 set $WS1 "1: "
@@ -229,7 +232,7 @@ bindsym $mod+Shift+r    exec $term          -e rtv
 bindsym $mod+z          exec $term          -e calcurse
 bindsym $mod+Shift+z    exec $term          -e neomutt
 bindsym $mod+g          exec $browser
-bindsym $mod+Shift+s    exec $spotify
+bindsym $mod+Shift+s    exec $term          -e cmus
 
 # Scratchpad
 # $exec $term -geometry 123x48 -name "scratchpad/utils/top" -e htop
@@ -240,7 +243,7 @@ bindsym $mod+Shift+s    exec $spotify
 # bindsym $mod+n          [instance="utils/notes$"]  scratchpad show
 bindsym $mod+i          $exec $term -n "utils/top" -e htop
 bindsym $mod+Shift+c    $exec $term -n "utils/R" -e R -q --no-save --no-restore
-bindsym $mod+n          $exec $term -n "utils/notes" -e nvim $HOME/.notes.txt
+bindsym $mod+n          $exec $term -n "utils/notes" -e nvim
 
 for_window [instance="utils/"] floating enable
 for_window [instance="scratchpad/"] move scratchpad
@@ -337,10 +340,10 @@ for_window [class="Nm-connection-editor"] floating enable
 # == WORKSPACE ==
 # WS1
 # WS2
-    # assign [window_role="browser"]    $WS2
-    # assign [class="Chromium"]         $WS2
-    # assign [class="Google-chrome"]    $WS2
-    # assign [class="qutebrowswer"]     $WS2
+    assign [window_role="browser"]    $WS2
+    assign [class="Chromium"]         $WS2
+    assign [class="Google-chrome"]    $WS2
+    assign [class="qutebrowswer"]     $WS2
     assign [class="Firefox"]            $WS2
 # WS3
     assign [class="bomi"]               $WS3
@@ -352,15 +355,16 @@ for_window [class="Nm-connection-editor"] floating enable
 # WS6
     #assign [class="Lutris"]            $WS6
     #assign [class="Steam"]             $WS6
+    for_window [class="cmus"] move to workspace $WS6
+    for_window [class="Spotify"] move to workspace $WS6
 # WS7
     assign [class="mpv"]                $WS7
 # WS8
-    assign [class="Discord"]            $WS8
+    for_window [class="Discord"] move to workspace $WS8
 # WS9
     #assign [class="qBittorrent"]       $WS9
 # WS0
     #assign [class="KeePass"]           $WS0
-    for_window [class="Spotify"] move to workspace $WS0
 
 # == STARTUP ==
 # exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -374,7 +378,6 @@ $exec fcitx
 $exec megasync
 # $exec nm-applet
 $exec compton -b 
-# $exec conky -d
 
 
 # $exec keepass

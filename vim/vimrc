@@ -44,45 +44,20 @@ let g:ale_linters = {
 \   'javascript': ['standard'],
 \}
 " }}}
-" AsyncRun {{{
-
-" Quick run via <F5>
-nnoremap <F5> :call <SID>compile_and_run()<CR>
-
-function! s:compile_and_run()
-    exec 'w'
-    if &filetype == 'c'
-        exec "AsyncRun! gcc % -o %<; time ./%<"
-    elseif &filetype == 'cpp'
-       exec "AsyncRun! g++ -std=c++11 % -o %<; time ./%<"
-    elseif &filetype == 'java'
-       exec "AsyncRun! javac %; time java %<"
-    elseif &filetype == 'sh'
-       exec "AsyncRun! time bash %"
-    elseif &filetype == 'python'
-       exec "AsyncRun! time python %"
-    endif
-endfunction
-
-" Deprecated:
-" augroup SPACEVIM_ASYNCRUN
-"     autocmd!
-"    " Automatically open the quickfix window
-"     autocmd User AsyncRunStart call asyncrun#quickfix_toggle(15, 1)
-" augroup END
-"
-" asyncrun now has an option for opening quickfix automatically
-let g:asyncrun_open = 15
-" }}}
-" Tabnine {{{
-set rtp+=~/.vim/bundle/tabnine-vim
-" }}}
 " {{{ Tagbar
 nmap <F8> :TagbarToggle<CR>
 "}}}
+"{{{ deoplete
+let g:deoplete#enable_at_startup = 1
+
+" Change clang binary path
+call deoplete#custom#var('clangx', 'clang_binary', '/usr/local/bin/clang')
+
+" Change clang options
+call deoplete#custom#var('clangx', 'default_c_options', '')
+call deoplete#custom#var('clangx', 'default_cpp_options', '')" }}}
 " }}}
 " General {{{
-
 " Basic options {{{
 
 set history=1000
@@ -112,6 +87,7 @@ set mouse=a
 set nojoinspaces
 
 " }}}
+" Appearance {{{
 
 colo allomancer
 
@@ -123,16 +99,18 @@ set modelines=5
 set encoding=utf-8
 setglobal fileencoding=utf-8
 
-set conceallevel=0
+set conceallevel=2
 
 set foldmethod=marker
 
+"}}}
 " Leader {{{
 
 let mapleader = ","
 let maplocalleader = "\\"
 
 " }}}
+" Easier file manipulations{{{
 
 inoremap <leader>w <esc>:w<cr>a
 " inoremap <leader>q <esc>:q!<cr>
@@ -152,7 +130,7 @@ nnoremap <leader>so :so ~/.vimrc<cr>
 inoremap <localleader>\ \\
 
 command! W :w !sudo tee %
-
+" }}}
 " }}}
 " Options {{{
 
@@ -233,9 +211,6 @@ inoremap <c-w> <c-g>u<c-w>
 " }}}
 
 " Search {{{
-
-nnoremap / /\v
-vnoremap / /\v
 
 set ignorecase
 set smartcase
@@ -323,6 +298,7 @@ nnoremap <leader>Z zMzvzz
 " Yank and paste to clipboard
 set clipboard=unnamed
 vnoremap <C-c> "+y
+nnoremap <C-p> "+p
 vnoremap <C-p> "+p
 
 " Cancer
@@ -390,10 +366,4 @@ autocmd BufRead,BufNewFile ~/.calcurse/notes/* set filetype=markdown
 " nnoremap :w :exe "silent !i3lock-fancy" \| wq
 " nnoremap :q :exe "silent !~/.config/i3/lock.sh" \| q
 
-" }}}
-" Code {{{
-let python_highlight_all=1
-syntax on
-command R !./%
-nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 " }}}

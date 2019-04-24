@@ -4,9 +4,6 @@
 [submodule "vim/vim/bundle/ale"]
 	path = vim/vim/bundle/ale
 	url = https://github.com/w0rp/ale
-[submodule "vim/vim/bundle/asyncrun.vim"]
-    path = vim/vim/bundle/asyncrun.vim
-    url = https://github.com/skywind3000/asyncrun.vim
 [submodule "vim/vim/bundle/i3-vim-syntax"]
 	path = vim/vim/bundle/i3-vim-syntax
 	url = https://github.com/PotatoesMaster/i3-vim-syntax
@@ -46,24 +43,27 @@
 [submodule "vim/vim/bundle/vim-sensible"]
 	path = vim/vim/bundle/vim-sensible
     url = https://github.com/tpope/vim-sensible
-[submodule "vim/vim/bundle/vim-signify"]
-    path = vim/vim/bundle/vim-signify
-    url = https://github.com/mhinz/vim-signify
 [submodule "vim/vim/bundle/vim-surround"]
 	path = vim/vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
-[submodule "vim/vim/bundle/vim-tbone"]
-    path = vim/vim/bundle/vim-tbone
-    url = https://github.com/tpope/vim-tbone
-[submodule "vim/vim/bundle/vimtex"]
-    path = vim/vim/bundle/vimtex
-    url = https://github.com/lervag/vimtex
-[submodule "vim/vim/bundle/Vundle.vim"]
-    path = vim/vim/bundle/Vundle.vim
-    url = https://github.com/VundleVim/Vundle.vim
 [submodule "emacs/packages/sensible-defaults.el"]
 	path = emacs/packages/sensible-defaults.el
 	url = https://github.com/hrs/sensible-defaults.el
-[submodule "vim/vim/bundle/vim-tmux-navigator"]
-	path = vim/vim/bundle/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule "vim/vim/bundle/dracula-theme"]
+	path = vim/vim/bundle/dracula-theme
+	url = https://github.com/dracula/vim.git
+[submodule "vim/vim/bundle/tagbar"]
+	path = vim/vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "vim/vim/bundle/vim-signify"]
+	path = vim/vim/bundle/vim-signify
+	url = https://github.com/mhinz/vim-signify.git
+[submodule "vim/vim/bundle/vimtex"]
+	path = vim/vim/bundle/vimtex
+	url = https://github.com/lervag/vimtex.git
+[submodule "vim/vim/bundle/deoplete.vim"]
+	path = vim/vim/bundle/deoplete.vim
+	url = https://github.com/Shougo/deoplete.nvim.git
+[submodule "vim/vim/bundle/deoplete-jedi"]
+	path = vim/vim/bundle/deoplete-jedi
+	url = https://github.com/deoplete-plugins/deoplete-jedi

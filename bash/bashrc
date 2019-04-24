@@ -25,7 +25,7 @@ export PS1="$(_get_PS1)${RANGER_LEVEL:+[ranger] }${SSH_TTY:+(ssh) }"
 export EDITOR=nvim
 export VISUAL=nvim
 export TERMINAL=urxvt
-export BROWSER=firefox
+export BROWSER=qutebrowser
 export MAN_DISABLE_SECCOMP=1
 
 # clipmenu

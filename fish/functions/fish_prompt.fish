@@ -1,6 +1,6 @@
 switch $USER
 case cqy
-    function twl_get_Prompt
+    function cqy_get_Prompt
         set_color 58B5F1
         echo -n 'a'
         set_color 6BBDF3
@@ -21,19 +21,19 @@ case cqy
         echo -n 's'
     end
 case root
-    function twl_get_Prompt
+    function cqy_get_Prompt
         set_color red
         echo -n '[root]'
     end
 
 case '*'
-    function twl_get_Prompt
+    function cqy_get_Prompt
         echo -n $User
     end
 end
 
 function fish_prompt
-    twl_get_Prompt
+    cqy_get_Prompt
     set_color white --bold
     echo -n ' '(basename (prompt_pwd))' '
     set_color normal

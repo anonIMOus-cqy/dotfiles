@@ -1,6 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR BROWSER:firefox
+SETUVAR BROWSER:qutebrowser
 SETUVAR CM_LAUNCHER:rofi
 SETUVAR CM_SELECTIONS:clipboard
 SETUVAR EDITOR:vim

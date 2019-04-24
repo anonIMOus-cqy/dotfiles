@@ -1,0 +1,8 @@
+#!/bin/bash
+
+exclusionregex="\(/boot\|/home\|/\)$"
+drives=$(lsblk -lp | grep "t /" | grep -v "$exclusionregex" | awk '{print $1, "(" $4 ")", "on", $7}')
+[[ "$drives" = "" ]] && echo "There is no drive to unmount!"
+chosen=$(echo "$drives" | dmenu -i -p "Unmount which drive?" | awk '{print $1}')
+[[ "$chosen" = "" ]] && echo "You must choose a drive to unmount!"
+sudo umount $chosen && pgrep -x dunst && notify-send "$chosen unmounted"

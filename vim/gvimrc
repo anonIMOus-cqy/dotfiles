@@ -8,7 +8,7 @@ colorscheme luna
 " Options {{{
 
 " Font
-set guifont=Iosevka\ Term\ 14
+set guifont=Iosevka\ Term\ 10
 
 " Gui options {{{
 

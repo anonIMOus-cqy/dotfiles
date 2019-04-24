@@ -86,8 +86,8 @@
 \newcommand{\wt}{\widetilde}
 \newcommand{\wh}{\widehat}
 \newcommand{\eps}{\varepsilon}
-%\renewcommand{\iff}{\Leftrightarrow}
-%\renewcommand{\implies}{\Rightarrow}
+\renewcommand{\ge}{\geqslant}
+\renewcommand{\le}{\leqslant}
 \newcommand{\vocab}[1]{\textbf{\color{blue} #1}}
 \newcommand{\catname}{\mathsf}
 \newcommand{\hrulebar}{
@@ -118,6 +118,11 @@
 \newcommand{\symsum}{\sum_{\mathrm{sym}}}
 \newcommand{\cycprod}{\prod_{\mathrm{cyc}}}
 \newcommand{\symprod}{\prod_{\mathrm{sym}}}
+
+%From "Probability and Statistics" at Marianopolis
+\DeclareMathOperator{\Bin}{\text{Bin}}
+\DeclareMathOperator{\discuni}{\text{discuni}}
+\DeclareMathOperator{\Cov}{\text{Cov}}
 
 %From H113 "Introduction to Abstract Algebra" at UC Berkeley
 \newcommand{\CC}{\mathbb C}
@@ -263,7 +268,7 @@
 	%\fi
 	%%fakesection Hyperref
 	\ifcqypkg
-		\PassOptionsToPackage{usenames,svgnames,dvipsnames}{xcolor}
+		\PassOptionsToPackage{letterpaper,usenames,svgnames,dvipsnames}{xcolor}
 		\usepackage{xcolor}
 		\ifcqyhref
 			\usepackage[colorlinks=true]{hyperref}
@@ -446,6 +451,7 @@
 		\ifcqymdthm
 			\declaretheorem[style=thmblackbox,name=Definition,sibling=theorem]{definition}
 			\declaretheorem[style=thmblackbox,name=Question,sibling=theorem]{question}
+			\declaretheorem[style=thmblackbox,name=Answer, sibling=theorem]{answer}
 			\declaretheorem[style=thmblackbox,name=Exercise,sibling=theorem]{exercise}
 			\declaretheorem[style=thmblackbox,name=Condition,sibling=theorem]{condition}
 			\declaretheorem[style=thmblackbox,name=Problem,sibling=theorem]{problem}
@@ -455,6 +461,7 @@
 			\declaretheorem[style=thmblackbox,name=Hypothesis,sibling=theorem]{hypothesis}
 			\declaretheorem[style=thmblackbox,name=Definition,numbered=no]{definition*}
 			\declaretheorem[style=thmblackbox,name=Question,numbered=no]{question*}
+			\declaretheorem[style=thmblackbox,name=Answer,numbered=no]{answer*}
 			\declaretheorem[style=thmblackbox,name=Exercise,numbered=no]{exercise*}
 			\declaretheorem[style=thmblackbox,name=Condition,numbered=no]{condition*}
 			\declaretheorem[style=thmblackbox,name=Problem,numbered=no]{problem*}
@@ -504,6 +511,7 @@
 			\declaretheorem[style=thmgreenbox,name=Note,sibling=theorem]{note}
 			\declaretheorem[style=thmgreenbox,name=Notation,sibling=theorem]{notation}
 			\declaretheorem[style=thmgreenbox,name=Claim,sibling=theorem]{claim}
+			\declaretheorem[style=thmgreenbox,name=Statement,sibling=theorem]{statement}
 			\declaretheorem[style=thmgreenbox,name=Summary,sibling=theorem]{summary}
 			\declaretheorem[style=thmgreenbox,name=Acknowledgment,sibling=theorem]{acknowledgment}
 			\declaretheorem[style=thmgreenbox,name=Case,sibling=theorem]{case}
@@ -513,6 +521,7 @@
 			\declaretheorem[style=thmgreenbox,name=Note,numbered=no]{note*}
 			\declaretheorem[style=thmgreenbox,name=Notation,numbered=no]{notation*}
 			\declaretheorem[style=thmgreenbox,name=Claim,numbered=no]{claim*}
+			\declaretheorem[style=thmgreenbox,name=Statement,numbered=no]{statement*}
 			\declaretheorem[style=thmgreenbox,name=Summary,numbered=no]{summary*}
 			\declaretheorem[style=thmgreenbox,name=Acknowledgment,numbered=no]{acknowledgment*}
 			\declaretheorem[style=thmgreenbox,name=Case,numbered=no]{case*}
@@ -523,6 +532,7 @@
 			\newtheorem{note}[theorem]{Note}
 			\newtheorem{notation}[theorem]{Notation}
 			\newtheorem{claim}[theorem]{Claim}
+			\newtheorem{statement}[theorem]{Statement}
 			\newtheorem{summary}[theorem]{Summary}
 			\newtheorem{acknowledgment}[theorem]{Acknowledgment}
 			\newtheorem{case}[theorem]{Case}
@@ -532,6 +542,7 @@
 			\newtheorem*{note*}{Note}
 			\newtheorem*{notation*}{Notation}
 			\newtheorem*{claim*}{Claim}
+			\newtheorem*{statement*}{Statement}
 			\newtheorem*{summary*}{Summary}
 			\newtheorem*{acknowledgment*}{Acknowledgment}
 			\newtheorem*{case*}{Case}
