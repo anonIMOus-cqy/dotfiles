@@ -27,7 +27,7 @@ alias gcc99="gcc -std=c99 -Wall"
 alias g++14="g++ -std=c++14 -Wall"
 
 # VIM
-alias v='vim'
+alias n='nvim'
 
 # Ranger
 alias ra='ranger'

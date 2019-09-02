@@ -1457,7 +1457,7 @@ c.tabs.title.format_pinned = '{audio}{index}'
 # Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 # for a blank page.
 # Type: FuzzyUrl
-c.url.default_page = 'https://start.duckduckgo.com/'
+c.url.default_page = 'https://www.startpage.com/'
 
 # URL segments where `:navigate increment/decrement` will search for a
 # number.
@@ -1485,23 +1485,23 @@ c.url.open_base_url = False
 # `:open google qutebrowser`.
 # Type: Dict
 c.url.searchengines = {
-        'DEFAULT': 'https://duckduckgo.com/?q={}',
+        'DEFAULT': 'https://www.startpage.com/do/search?q={}',
         'd': 'https://duckduckgo.com/?q={}',
         'gg': 'https://www.google.com/search?q={}',
-        'r': 'https://old.reddit.com{}',
+        'r': 'https://old.reddit.com/r/{}',
         'rs': 'https://duckduckgo.com/?q=site:"reddit.com" {}',
         'trans': 'https://translate.google.com/#auto/en/{}',
         'aur': 'https://aur.archlinux.org/packages/?O=0&K={}',
         'aw': 'https://wiki.archlinux.org/index.php?search={}',
         'ud': 'http://www.urbandictionary.com/define.php?term={}',
-        'walph': 'https://www.wolframalpha.com/input/?i={}',
+        'wa': 'https://www.wolframalpha.com/input/?i={}',
         'yt': 'https://youtube.com/results?search_query={}',
-        'w': 'https://en.wikipedia.org/w/index.php?title=Special&search={}',
+        'wk': 'https://en.wikipedia.org/w/index.php?title=Special&search={}',
         }
 
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
-c.url.start_pages = ['https://start.duckduckgo.com']
+c.url.start_pages = ['https://www.startpage.com']
 
 # URL parameters to strip with `:yank url`.
 # Type: List of String

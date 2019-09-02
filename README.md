@@ -1,10 +1,10 @@
 # dotfiles
 
-Clone this repo, install submodules, run `install` to set up.
+Clone this repo, run `cd ~/dotfiles` then `./install` to set up.
 
-This dotfiles uses [Dotbot](https://github.com/anishathalye/dotbot/) for installation.
+We use [Dotbot](https://github.com/anishathalye/dotbot/) for installation.
 
-## Fonts
+## Dependencies
 
 - wucon siji
 - misc ohsnap

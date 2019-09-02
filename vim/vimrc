@@ -1,10 +1,26 @@
-" Pathogen {{{
-
-set sessionoptions-=options
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-Helptags
-
+" Vim-plug {{{
+call plug#begin('~/.config/nvim/plugged')
+Plug 'w0rp/ale'
+Plug 'neoclide/coc.nvimvim-airline/vim-airline'
+Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'bling/vim-bufferline'
+Plug 'tpope/vim-dispatch'
+Plug 'dag/vim-fish'
+Plug 'vim-latex/vim-latex'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'tpope/vim-sensible'
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-surround'
+Plug 'lervag/vimtex'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'Nequo/vim-allomancer'
+Plug 'mhinz/neovim-remote'
+call plug#end()
 " }}}
 " Plugins {{{
 " Vim-Latex {{{
@@ -19,6 +35,7 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 
 let g:airline_skip_empty_sections = 1
+let g:airline#extensions#coc#enabled = 1
 
 " Theme
 let g:airline_theme = 'luna'
@@ -47,15 +64,43 @@ let g:ale_linters = {
 " {{{ Tagbar
 nmap <F8> :TagbarToggle<CR>
 "}}}
-"{{{ deoplete
-let g:deoplete#enable_at_startup = 1
+" {{{ vimtex
+let g:vimtex_compiler_progname = 'nvr'
+" }}}
+" {{{ coc.nvim
+autocmd FileType json syntax match Comment +\/\/.\+$+
+function! SetupCommandAbbrs(from, to)
+  exec 'cnoreabbrev <expr> '.a:from
+        \ .' ((getcmdtype() ==# ":" && getcmdline() ==# "'.a:from.'")'
+        \ .'? ("'.a:to.'") : ("'.a:from.'"))'
+endfunction
 
-" Change clang binary path
-call deoplete#custom#var('clangx', 'clang_binary', '/usr/local/bin/clang')
+" Use C to open coc config
+call SetupCommandAbbrs('C', 'CocConfig')
+" Bash language server
+let g:LanguageClient_serverCommands = {
+    \ 'sh': ['bash-language-server', 'start']
+    \ }
 
-" Change clang options
-call deoplete#custom#var('clangx', 'default_c_options', '')
-call deoplete#custom#var('clangx', 'default_cpp_options', '')" }}}
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+" Use <Tab> and <S-Tab> to navigate the completion list
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" Use <cr> to confirm completion
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Close the preview window when completion is done.
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+" }}}
 " }}}
 " General {{{
 " Basic options {{{
@@ -133,7 +178,6 @@ command! W :w !sudo tee %
 " }}}
 " }}}
 " Options {{{
-
 " Scrolling {{{
 
 set scrolloff=3
@@ -141,7 +185,6 @@ set sidescroll=1
 set sidescrolloff=10
 
 " }}}
-
 " Show invisible char {{{
 
 set list
@@ -151,7 +194,6 @@ hi NonText ctermfg=244
 hi SpecialKey ctermfg=244
 
 " }}}
-
 " Tab, spaces, wrapping options {{{
 
 set tabstop=4
@@ -164,7 +206,6 @@ set colorcolumn=+1
 set formatoptions=qrn1
 
 " }}}
-
 " Wildmenu {{{
 
 set wildmenu
@@ -177,10 +218,8 @@ set wildignore+=*.sw?                           " Vim swap files
 set wildignore+=*.DS_Store                      " OSX
 
 " }}}
-
 " Resize splits when the window is resized
 au VimResized * exe "normal! \<c-w>="
-
 " Line Return {{{
 
 " Makes Vim return to the same line when you reopen a file.
@@ -192,7 +231,6 @@ if has("autocmd")
 endif
 
 " }}}
-
 " Backups {{{
 
 set undodir=~/.vim/tmp/undo//
@@ -209,7 +247,6 @@ inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
 " }}}
-
 " Search {{{
 
 set ignorecase
@@ -253,7 +290,6 @@ vnoremap # :<c-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 " }}}
 
 " }}}
-
 " Navigation {{{
 
 " Easier to use
@@ -276,7 +312,6 @@ inoremap <c-e> <esc>A
 set virtualedit+=block
 
 " }}}
-
 " Highlight word {{{
 
 nnoremap <silent> <leader>hh :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
@@ -285,7 +320,6 @@ nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'
 nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
 
 " }}}
-
 " Folding {{{
 
 nnoremap <space> za
@@ -294,19 +328,15 @@ vnoremap <space> za
 nnoremap <leader>Z zMzvzz
 
 " }}}
-
 " Yank and paste to clipboard
 set clipboard=unnamed
 vnoremap <C-c> "+y
 nnoremap <C-p> "+p
 vnoremap <C-p> "+p
-
 " Cancer
 vnoremap K k
-
 " Increment ordered list
 "inoremap <leader><cr> <esc>Yp<c-a>elC
-
 " Cool Shell command {{{
 
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
@@ -332,7 +362,6 @@ endfunction
 nnoremap <leader>s :Shell
 
 " }}}
-
 " }}}
 " Abbreviations {{{
 

@@ -297,9 +297,9 @@ This might seem minor, but is actually such a life saver.
 *** Font
 
 #+BEGIN_SRC emacs-lisp
-(set-frame-font "Iosevka Term-10")
+(set-frame-font "Iosevka Term-14")
 (add-hook 'focus-in-hook
-          (lambda () (set-frame-font "Iosevka Term-10")))
+          (lambda () (set-frame-font "Iosevka Term-14")))
 #+END_SRC
 
 *** Theme
@@ -548,7 +548,7 @@ Otherwise, it looks very rainbow-ish and unbearable.
   :config
   (setq ispell-program-name "/usr/bin/aspell"
         ispell-extra-args '("--sug-mode=ultra"))
-  (ispell-change-dictionary "en_CA"))
+  (ispell-change-dictionary "en_US"))
 #+END_SRC
 
 * Packages

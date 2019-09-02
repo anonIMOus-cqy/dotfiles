@@ -1,69 +1,6 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
-[submodule "vim/vim/bundle/ale"]
-	path = vim/vim/bundle/ale
-	url = https://github.com/w0rp/ale
-[submodule "vim/vim/bundle/i3-vim-syntax"]
-	path = vim/vim/bundle/i3-vim-syntax
-	url = https://github.com/PotatoesMaster/i3-vim-syntax
-[submodule "vim/vim/bundle/nerdtree"]
-	path = vim/vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree
-[submodule "vim/vim/bundle/vim-airline"]
-	path = vim/vim/bundle/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule "vim/vim/bundle/vim-airline-themes"]
-	path = vim/vim/bundle/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes
-[submodule "vim/vim/bundle/vim-bufferline"]
-	path = vim/vim/bundle/vim-bufferline
-	url = https://github.com/bling/vim-bufferline
-[submodule "vim/vim/bundle/vim-colorschemes"]
-	path = vim/vim/bundle/vim-colorschemes
-	url = https://github.com/flazz/vim-colorschemes
-[submodule "vim/vim/bundle/vim-dispatch"]
-	path = vim/vim/bundle/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch
-[submodule "vim/vim/bundle/vim-fish"]
-	path = vim/vim/bundle/vim-fish
-	url = https://github.com/dag/vim-fish
-[submodule "vim/vim/bundle/vim-latex"]
-	path = vim/vim/bundle/vim-latex
-	url = https://github.com/vim-latex/vim-latex
-[submodule "vim/vim/bundle/vim-pandoc"]
-	path = vim/vim/bundle/vim-pandoc
-	url = https://github.com/vim-pandoc/vim-pandoc
-[submodule "vim/vim/bundle/vim-pandoc-syntax"]
-	path = vim/vim/bundle/vim-pandoc-syntax
-	url = https://github.com/vim-pandoc/vim-pandoc-syntax
-[submodule "vim/vim/bundle/vim-pathogen"]
-	path = vim/vim/bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen
-[submodule "vim/vim/bundle/vim-sensible"]
-	path = vim/vim/bundle/vim-sensible
-    url = https://github.com/tpope/vim-sensible
-[submodule "vim/vim/bundle/vim-surround"]
-	path = vim/vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround
 [submodule "emacs/packages/sensible-defaults.el"]
 	path = emacs/packages/sensible-defaults.el
 	url = https://github.com/hrs/sensible-defaults.el
-[submodule "vim/vim/bundle/dracula-theme"]
-	path = vim/vim/bundle/dracula-theme
-	url = https://github.com/dracula/vim.git
-[submodule "vim/vim/bundle/tagbar"]
-	path = vim/vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
-[submodule "vim/vim/bundle/vim-signify"]
-	path = vim/vim/bundle/vim-signify
-	url = https://github.com/mhinz/vim-signify.git
-[submodule "vim/vim/bundle/vimtex"]
-	path = vim/vim/bundle/vimtex
-	url = https://github.com/lervag/vimtex.git
-[submodule "vim/vim/bundle/deoplete.vim"]
-	path = vim/vim/bundle/deoplete.vim
-	url = https://github.com/Shougo/deoplete.nvim.git
-[submodule "vim/vim/bundle/deoplete-jedi"]
-	path = vim/vim/bundle/deoplete-jedi
-	url = https://github.com/deoplete-plugins/deoplete-jedi

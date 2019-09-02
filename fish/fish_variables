@@ -3,10 +3,9 @@
 SETUVAR BROWSER:qutebrowser
 SETUVAR CM_LAUNCHER:rofi
 SETUVAR CM_SELECTIONS:clipboard
-SETUVAR EDITOR:vim
-SETUVAR NVM_DIR:/home/cqy/\x2envm
-SETUVAR TERMINAL:urxvt
 SETUVAR EDITOR:nvim
+SETUVAR NVM_DIR:/home/cqy/\x2envm
+SETUVAR TERMINAL:st
 SETUVAR VISUAL:nvim
 SETUVAR __fish_classic_git_prompt_initialized:\x1d
 SETUVAR __fish_init_2_39_8:\x1d
