@@ -1,4 +1,4 @@
 .*.comp
 *.shortcuts
 .#*
-
+nvim/plugged/*
