@@ -1430,7 +1430,7 @@ c.tabs.show = 'multiple'
 # * `{protocol}`: Protocol (http/https/...) of the current web page.
 # * `{audio}`: Indicator for audio/mute status.
 # Type: FormatString
-c.tabs.title.format = '{audio}{index} {perc}{protocol}: {title} {private}'
+c.tabs.title.format = '{audio}{index} {perc}{protocol}: {current_title} {private}'
 
 # Format to use for the tab title for pinned tabs. The same placeholders
 # like for `tabs.title.format` are defined.
@@ -1486,7 +1486,7 @@ c.url.open_base_url = False
 # Type: Dict
 c.url.searchengines = {
         'DEFAULT': 'https://www.startpage.com/do/search?q={}',
-        'd': 'https://duckduckgo.com/?q={}',
+        'ddg': 'https://duckduckgo.com/?q={}',
         'gg': 'https://www.google.com/search?q={}',
         'r': 'https://old.reddit.com/r/{}',
         'rs': 'https://duckduckgo.com/?q=site:"reddit.com" {}',
@@ -1522,11 +1522,11 @@ c.url.yank_ignored_parameters = [
 # Format to use for the window title. The same placeholders like for
 # `tabs.title.format` are defined.
 # Type: FormatString
-c.window.title_format = '{perc}{title}{title_sep}qutebrowser'
+c.window.title_format = '{perc}{current_title}{title_sep}qutebrowser'
 
 # Default zoom level.
 # Type: Perc
-c.zoom.default = '150%'
+c.zoom.default = '175%'
 
 # Available zoom levels.
 # Type: List of Perc
