@@ -49,5 +49,6 @@ fi
 # redshift-gtk &
 
 #echo "Starting at $(date)" >> ~/.i3/logfile
+#exec dwm
 exec /usr/bin/i3
 # -V -d all >> ~/.i3/logfile 2>&1
