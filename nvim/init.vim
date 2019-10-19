@@ -18,7 +18,7 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-surround'
 Plug 'lervag/vimtex'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Nequo/vim-allomancer'
+Plug 'rakr/vim-two-firewatch'
 Plug 'mhinz/neovim-remote'
 Plug 'autozimu/LanguageClient-neovim'
 call plug#end()
@@ -37,22 +37,9 @@ let g:airline_powerline_fonts = 1
 
 let g:airline_skip_empty_sections = 1
 let g:airline#extensions#coc#enabled = 1
-
-" Theme
-let g:airline_theme = 'luna'
 " }}}
 " bufferline {{{
 let g:bufferline_echo = 0
-" }}}
-" Syntastic {{{
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
 " }}}
 " NERDTree {{{
 nnoremap <C-n> :NERDTreeToggle<CR>
@@ -134,8 +121,12 @@ set nojoinspaces
 
 " }}}
 " Appearance {{{
+set termguicolors
+set background=dark " or light if you prefer the light version
+let g:two_firewatch_italics=1
+colo two-firewatch
 
-colo allomancer
+let g:airline_theme='twofirewatch' " if you have Airline installed and want the associated theme
 
 syntax on
 filetype plugin indent on
@@ -363,17 +354,6 @@ endfunction
 nnoremap <leader>s :Shell
 
 " }}}
-" }}}
-" Abbreviations {{{
-
-" Emoticons
-iabbrev ldis ಠ_ಠ
-iabbrev lsad ಥ_ಥ
-iabbrev lsmg ಸωಸ
-iabbrev lflo (◕‿◕✿)
-
-iabbrev i3@ i3wgnit@gmail.com
-
 " }}}
 " Quick edit {{{
 

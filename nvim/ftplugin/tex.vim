@@ -2,8 +2,7 @@ set iskeyword+=:
 set ts=2
 set sw=2
 set sts=2
-set listchars+=space:␣
-set noexpandtab
+set expandtab
 set spell spelllang:en_ca
 
 " Enable `Alt` key macros
@@ -18,7 +17,7 @@ function! StartLatexmk()
     "     echo "latexmk is already running"
     " else
     "     let b:latexmkStarted = 1
-        Start! urxvt -e latexmk -f -silent -pvc %
+        Start! st -e latexmk -f -silent -pvc %
         echo "latexmk is now running"
     " endif
 endfunction
