@@ -24,7 +24,7 @@ Plug 'autozimu/LanguageClient-neovim'
 call plug#end()
 " }}}
 " Plugins {{{
-" Vim-Latex {{{
+" Vim-LaTeX {{{
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 let g:Tex_SmartKeyQuote=0
@@ -197,12 +197,12 @@ hi SpecialKey ctermfg=244
 " }}}
 " Tab, spaces, wrapping options {{{
 
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
 set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set wrap
-set textwidth=79
+set textwidth=50
 set colorcolumn=+1
 set formatoptions=qrn1
 
