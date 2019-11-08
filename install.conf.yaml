@@ -59,10 +59,10 @@
     ~/.config/i3:
     ~/.config/i3blocks:
 
-    # # polybar
-    # ~/.config/polybar/config:               polybar/config
-    # ~/.config/polybar/scripts:              polybar/scripts
-    # ~/.config/polybar/launch.sh:            polybar/launch.sh
+    # polybar
+    ~/.config/polybar/config:               polybar/config
+    ~/.config/polybar/scripts:              polybar/scripts
+    ~/.config/polybar/launch.sh:            polybar/launch.sh
 
     # ranger
     ~/.config/ranger:
