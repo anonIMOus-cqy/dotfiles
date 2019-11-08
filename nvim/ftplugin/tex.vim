@@ -48,3 +48,15 @@ nnoremap <silent> <buffer> <localLeader>p :silent! execute "silent! !zathura ".e
 " autocmd TextChangedI *.tex call UpdatePDF()
 " autocmd BufWritePost * call UpdatePDF()
 
+let g:Tex_Env_definition = "\\begin{definition}[<++>]<++>\<CR><+content+>\<CR>\\label{def:<+label+>}\<CR>\\end{definition}\<CR>\<++>"
+let g:Tex_Env_example = "\\begin{example}[<++>]<++>\<CR><+content+>\<CR>\\label{ex:<+label+>}\<CR>\\end{example}\<CR>\<++>"
+let g:Tex_Env_theorem = "\\begin{theorem}[<++>]<++>\<CR><+content+>\<CR>\\label{thm:<+label+>}\<CR>\\end{theorem}\<CR>\<++>"
+let g:Tex_Env_remark = "\\begin{remark}[<++>]<++>\<CR><+content+>\<CR>\\label{rmk:<+label+>}\<CR>\\end{remark}\<CR>\<++>"
+let g:Tex_Env_proposition = "\\begin{proposition}[<++>]<++>\<CR><+content+>\<CR>\\label{props:<+label+>}\<CR>\\end{proposition}\<CR>\<++>"
+let g:Tex_Env_notation = "\\begin{notation}[<++>]<++>\<CR><+content+>\<CR>\\label{not:<+label+>}\<CR>\\end{notation}\<CR>\<++>"
+let g:Tex_Env_identity = "\\begin{identity}[<++>]<++>\<CR><+content+>\<CR>\\label{ident:<+label+>}\<CR>\\end{identity}\<CR>\<++>"
+let g:Tex_Env_property = "\\begin{property}[<++>]<++>\<CR><+content+>\<CR>\\label{prop:<+label+>}\<CR>\\end{property}\<CR>\<++>"
+
+
+" Enable hotkey mappings (currently not working)
+let g:Tex_HotkeyMappings = 'definition, example, theorem, remark'
