@@ -1,7 +1,7 @@
 #!/bin/bash
 
 case $BLOCK_BUTTON in
-    1) ${TERMINAL:-urxvt} -e nmtui & disown ;;
+    1) ${TERMINAL:-st} -e nmtui & disown ;;
     3) nm-connection-editor & disown ;;
 esac
 

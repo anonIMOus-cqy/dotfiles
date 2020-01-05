@@ -21,6 +21,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rakr/vim-two-firewatch'
 Plug 'mhinz/neovim-remote'
 Plug 'autozimu/LanguageClient-neovim'
+Plug 'flazz/vim-colorschemes'
+Plug 'Nequo/vim-allomancer'
 call plug#end()
 " }}}
 " Plugins {{{
@@ -123,10 +125,10 @@ set nojoinspaces
 " Appearance {{{
 set termguicolors
 set background=dark " or light if you prefer the light version
-let g:two_firewatch_italics=1
-colo two-firewatch
+" let g:two_firewatch_italics=1
+colo allomancer
 
-let g:airline_theme='twofirewatch' " if you have Airline installed and want the associated theme
+let g:airline_theme='luna' " if you have Airline installed and want the associated theme
 
 syntax on
 filetype plugin indent on
