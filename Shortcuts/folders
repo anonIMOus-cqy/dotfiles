@@ -11,11 +11,12 @@ r           /
 S           ~/Documents/school
 N           ~/Nextcloud
 
-uw          ~/Documents/school/uwat
-uwcs145     ~/Documents/school/uwat/1a/cs145
-uwm145      ~/Documents/school/uwat/1a/math145
-uwm138      ~/Documents/school/uwat/1a/math138
-uwp121      ~/Documents/school/uwat/1a/phys121
+wlu         ~/Documents/school/wlu
+m121        ~/Documents/school/wlu/w2020/m121
+m238        ~/Documents/school/wlu/w2020/m238
+m250        ~/Documents/school/wlu/w2020/m250
+st260       ~/Documents/school/wlu/w2020/st260
+cs104       ~/Documents/school/wlu/w2020/cs104
 
 uwcs146     ~/Documents/school/uwat/1b/cs146
 uwm146      ~/Documents/school/uwat/1b/math146

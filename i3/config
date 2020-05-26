@@ -15,7 +15,7 @@ set $mod Mod4
 set $exec exec --no-startup-id
 
 set $term st
-set $browser firefox-nightly
+set $browser firefox
 
 set $clip $(xclip -selection c -o)
 
@@ -109,16 +109,16 @@ bindsym $mod+d focus child
 bindsym $mod+x [urgent=latest] focus
 
 # set workspace vars
-set $WS1 "1: "
-set $WS2 "2: "
-set $WS3 "3: "
-set $WS4 "4: "
-set $WS5 "5: "
-set $WS6 "6: "
-set $WS7 "7: "
-set $WS8 "8: "
-set $WS9 "9: "
-set $WS0 "10: "
+set $WS1 "1"
+set $WS2 "2"
+set $WS3 "3"
+set $WS4 "4"
+set $WS5 "5"
+set $WS6 "6"
+set $WS7 "7"
+set $WS8 "8"
+set $WS9 "9"
+set $WS0 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $WS1
@@ -257,7 +257,7 @@ for_window [instance="sticky/"] sticky enable
 # bad idea.. super slow
 
 # load video/music in clipboard
-bindsym $mod+m          workspace $WS7, layout tabbed, exec $term -e mpv "$clip"
+bindsym $mod+m          workspace $WS7, exec $term -e mpv "$clip"
 bindsym $mod+Shift+m    workspace $WS7, exec $term -e mpv --no-video --shuffle "$clip"
 
 # gap size
@@ -313,7 +313,7 @@ bindsym Print mode "$print"
 
 # system
 mode "$system" {
-        bindsym l $exec gllock, mode "default"
+        bindsym l $exec slock, mode "default"
         # bindsym l $exec ~/.config/i3/lock.sh, mode "default"
         bindsym e exec i3-msg exit, mode "default"
         bindsym s $exec systemctl suspend, mode "default"
@@ -351,7 +351,7 @@ for_window [class="Nm-connection-editor"] floating enable
 # WS3
     assign [class="bomi"]               $WS3
 # WS4
-    assign [class="Zathura"]            $WS4
+    #assign [class="Zathura"]            $WS4
 # WS5
     assign [instance="latexmk"]         $WS5
     assign [class="DrRacket"]           $WS5
@@ -376,5 +376,7 @@ $exec emacs --daemon
 $exec fcitx
 $exec megasync
 $exec nextcloud
+$exec mullvad-vpn
 # $exec nm-applet
-$exec compton -b
+$exec picom -b
+$exec signal-desktop --use-tray-icon --start-in-tray

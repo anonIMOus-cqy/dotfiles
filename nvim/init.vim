@@ -13,6 +13,7 @@ Plug 'dag/vim-fish'
 Plug 'vim-latex/vim-latex'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-rmarkdown'
 Plug 'tpope/vim-sensible'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-surround'
@@ -44,7 +45,7 @@ let g:airline#extensions#coc#enabled = 1
 let g:bufferline_echo = 0
 " }}}
 " NERDTree {{{
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
 " }}}
 " Ale {{{
 let g:ale_linters = {

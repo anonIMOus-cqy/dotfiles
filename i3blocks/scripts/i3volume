@@ -1,7 +1,7 @@
 #!/bin/bash
 
 case $BLOCK_BUTTON in
-    1)  ${TERMINAL:-urxvt} -e pulsemixer & disown ;;
+    1)  ${TERMINAL:-st} -e pulsemixer & disown ;;
     2)  pamixer -m ;;
     3)  pamixer -t ;;
     4)  pamixer --allow-boost -ud 5 ;;
